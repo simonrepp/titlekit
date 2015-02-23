@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'titlekit'
 
 RSpec.configure do |config|
