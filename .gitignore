@@ -5,6 +5,8 @@
 .ruby-version
 .rvmrc
 .rspec
+.sublime-project
+.sublime-workspace
 .yardoc
 Gemfile.lock
 doc/
