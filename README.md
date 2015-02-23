@@ -1,6 +1,6 @@
 # Titlekit [![Build Status](https://travis-ci.org/simonrepp/titlekit.png)](https://travis-ci.org/simonrepp/titlekit)
 
-Featureful Ruby 2 library for SRT / ASS / SSA subtitles
+Featureful Ruby library for SRT / ASS / SSA subtitles
 
 *Titlekit supports SRT, ASS and SSA, file format conversion, transcoding, automatic encoding detection, creation of simultaneous/multi-language subtitles, and timecode corrections with simple, progressive and framerate-based approaches. All of this is packed into a natural, dead-simple (and also irb-friendly) API.*
 

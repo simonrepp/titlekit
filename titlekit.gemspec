@@ -2,8 +2,8 @@ require File.expand_path('../lib/titlekit/version', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name = 'titlekit'
-  spec.summary = 'Featureful ruby library for SRT / ASS / SSA subtitles'
-  spec.description = 'Featureful ruby library for SRT / ASS / SSA subtitles'
+  spec.summary = 'Featureful Ruby library for SRT / ASS / SSA subtitles'
+  spec.description = 'Featureful Ruby library for SRT / ASS / SSA subtitles'
   
   spec.homepage = 'https://github.com/simonrepp/titlekit'
   
