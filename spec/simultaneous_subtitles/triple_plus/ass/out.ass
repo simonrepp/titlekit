@@ -15,18 +15,18 @@ Style: 89BABE,Arial,16,&H00BEBA89,&H00BEBA89,&H40000000,&H40000000,0,0,0,0,100,1
 [Events]
 Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:01.00,0:00:02.00,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.00,0:00:02.40,EDF393,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.00,0:00:02.40,F5E665,,0000,0000,0000,,We are using six subtitles simultaneously
-Dialogue: 0,0:00:02.00,0:00:02.40,FFC472,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.00,0:00:02.40,EDF393,,0000,0000,0000,,We are using six subtitles simultaneously
+Dialogue: 0,0:00:02.00,0:00:02.40,F5E665,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.00,0:00:02.40,FFC472,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
 Dialogue: 0,0:00:02.00,0:00:02.40,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.40,0:00:02.70,EDF393,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.40,0:00:02.70,F5E665,,0000,0000,0000,,We are using six subtitles simultaneously
-Dialogue: 0,0:00:02.40,0:00:02.70,FFC472,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.40,0:00:02.70,EDF393,,0000,0000,0000,,We are using six subtitles simultaneously
+Dialogue: 0,0:00:02.40,0:00:02.70,F5E665,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.40,0:00:02.70,FFC472,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
 Dialogue: 0,0:00:02.40,0:00:02.70,89BABE,,0000,0000,0000,,We are using way too many here
 Dialogue: 0,0:00:02.40,0:00:02.70,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.70,0:00:10.00,EDF393,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
-Dialogue: 0,0:00:02.70,0:00:10.00,F5E665,,0000,0000,0000,,We are using six subtitles simultaneously
-Dialogue: 0,0:00:02.70,0:00:10.00,FFC472,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.70,0:00:10.00,EDF393,,0000,0000,0000,,We are using six subtitles simultaneously
+Dialogue: 0,0:00:02.70,0:00:10.00,F5E665,,0000,0000,0000,,Somos utilizando seis subtítulos simultáneamente
+Dialogue: 0,0:00:02.70,0:00:10.00,FFC472,,0000,0000,0000,,Wir verwenden sechs Untertitel zur gleichen Zeit
 Dialogue: 0,0:00:02.70,0:00:10.00,FFA891,,0000,0000,0000,,¿Qué está pasando?
 Dialogue: 0,0:00:02.70,0:00:10.00,89BABE,,0000,0000,0000,,We are using way too many here
 Dialogue: 0,0:00:02.70,0:00:10.00,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
@@ -37,22 +37,22 @@ Dialogue: 0,0:00:10.35,0:00:10.38,89BABE,,0000,0000,0000,,We are using way too m
 Dialogue: 0,0:00:10.35,0:00:10.38,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
 Dialogue: 0,0:00:10.38,0:00:11.00,EDF393,,0000,0000,0000,,Wir verwenden zu viele Untertitel zur gleichen Zeit
 Dialogue: 0,0:00:11.95,0:00:11.97,FFA891,,0000,0000,0000,,¡Dios mio!
-Dialogue: 0,0:00:11.97,0:00:11.99,F5E665,,0000,0000,0000,,That is correct
+Dialogue: 0,0:00:11.97,0:00:11.99,EDF393,,0000,0000,0000,,That is correct
 Dialogue: 0,0:00:11.97,0:00:11.99,FFA891,,0000,0000,0000,,¡Dios mio!
-Dialogue: 0,0:00:11.99,0:00:12.04,F5E665,,0000,0000,0000,,That is correct
-Dialogue: 0,0:00:11.99,0:00:12.04,FFC472,,0000,0000,0000,,Esto es correcto
+Dialogue: 0,0:00:11.99,0:00:12.04,EDF393,,0000,0000,0000,,That is correct
+Dialogue: 0,0:00:11.99,0:00:12.04,F5E665,,0000,0000,0000,,Esto es correcto
 Dialogue: 0,0:00:11.99,0:00:12.04,FFA891,,0000,0000,0000,,¡Dios mio!
-Dialogue: 0,0:00:12.04,0:00:12.12,EDF393,,0000,0000,0000,,Das stimmt
-Dialogue: 0,0:00:12.04,0:00:12.12,F5E665,,0000,0000,0000,,That is correct
-Dialogue: 0,0:00:12.04,0:00:12.12,FFC472,,0000,0000,0000,,Esto es correcto
+Dialogue: 0,0:00:12.04,0:00:12.12,EDF393,,0000,0000,0000,,That is correct
+Dialogue: 0,0:00:12.04,0:00:12.12,F5E665,,0000,0000,0000,,Esto es correcto
+Dialogue: 0,0:00:12.04,0:00:12.12,FFC472,,0000,0000,0000,,Das stimmt
 Dialogue: 0,0:00:12.04,0:00:12.12,FFA891,,0000,0000,0000,,¡Dios mio!
-Dialogue: 0,0:00:12.12,0:00:20.00,EDF393,,0000,0000,0000,,Das stimmt
-Dialogue: 0,0:00:12.12,0:00:20.00,F5E665,,0000,0000,0000,,That is correct
-Dialogue: 0,0:00:12.12,0:00:20.00,FFC472,,0000,0000,0000,,Esto es correcto
+Dialogue: 0,0:00:12.12,0:00:20.00,EDF393,,0000,0000,0000,,That is correct
+Dialogue: 0,0:00:12.12,0:00:20.00,F5E665,,0000,0000,0000,,Esto es correcto
+Dialogue: 0,0:00:12.12,0:00:20.00,FFC472,,0000,0000,0000,,Das stimmt
 Dialogue: 0,0:00:12.12,0:00:20.00,FFA891,,0000,0000,0000,,¡Dios mio!
 Dialogue: 0,0:00:12.12,0:00:20.00,89BABE,,0000,0000,0000,,Man I feel sick
 Dialogue: 0,0:00:12.12,0:00:20.00,EDF393,,0000,0000,0000,,Die Dinge geraten aus dem Ruder
-Dialogue: 0,0:00:20.00,0:00:20.10,EDF393,,0000,0000,0000,,Das stimmt
+Dialogue: 0,0:00:20.00,0:00:20.10,FFC472,,0000,0000,0000,,Das stimmt
 Dialogue: 0,0:00:20.00,0:00:20.10,FFA891,,0000,0000,0000,,¡Dios mio!
 Dialogue: 0,0:00:20.00,0:00:20.10,89BABE,,0000,0000,0000,,Man I feel sick
 Dialogue: 0,0:00:20.00,0:00:20.10,EDF393,,0000,0000,0000,,Die Dinge geraten aus dem Ruder
@@ -62,33 +62,33 @@ Dialogue: 0,0:00:20.10,0:00:20.15,EDF393,,0000,0000,0000,,Die Dinge geraten aus 
 Dialogue: 0,0:00:20.15,0:00:20.90,FFA891,,0000,0000,0000,,¡Dios mio!
 Dialogue: 0,0:00:20.15,0:00:20.90,89BABE,,0000,0000,0000,,Man I feel sick
 Dialogue: 0,0:00:20.90,0:00:21.40,FFA891,,0000,0000,0000,,¡Dios mio!
-Dialogue: 0,0:00:22.00,0:00:22.45,F5E665,,0000,0000,0000,,They are not fully aligned, though
-Dialogue: 0,0:00:22.45,0:00:22.90,EDF393,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
-Dialogue: 0,0:00:22.45,0:00:22.90,F5E665,,0000,0000,0000,,They are not fully aligned, though
+Dialogue: 0,0:00:22.00,0:00:22.45,EDF393,,0000,0000,0000,,They are not fully aligned, though
+Dialogue: 0,0:00:22.45,0:00:22.90,EDF393,,0000,0000,0000,,They are not fully aligned, though
+Dialogue: 0,0:00:22.45,0:00:22.90,FFC472,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
 Dialogue: 0,0:00:22.45,0:00:22.90,FFA891,,0000,0000,0000,,Esta cosa esta totalmente loca
-Dialogue: 0,0:00:22.90,0:00:23.50,EDF393,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
-Dialogue: 0,0:00:22.90,0:00:23.50,F5E665,,0000,0000,0000,,They are not fully aligned, though
-Dialogue: 0,0:00:22.90,0:00:23.50,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:22.90,0:00:23.50,EDF393,,0000,0000,0000,,They are not fully aligned, though
+Dialogue: 0,0:00:22.90,0:00:23.50,F5E665,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:22.90,0:00:23.50,FFC472,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
 Dialogue: 0,0:00:22.90,0:00:23.50,FFA891,,0000,0000,0000,,Esta cosa esta totalmente loca
 Dialogue: 0,0:00:22.90,0:00:23.50,EDF393,,0000,0000,0000,,Sie sind überhaupt nicht synchron aber wen interessiert das schon
-Dialogue: 0,0:00:23.50,0:00:30.00,EDF393,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
-Dialogue: 0,0:00:23.50,0:00:30.00,F5E665,,0000,0000,0000,,They are not fully aligned, though
-Dialogue: 0,0:00:23.50,0:00:30.00,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:23.50,0:00:30.00,EDF393,,0000,0000,0000,,They are not fully aligned, though
+Dialogue: 0,0:00:23.50,0:00:30.00,F5E665,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:23.50,0:00:30.00,FFC472,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
 Dialogue: 0,0:00:23.50,0:00:30.00,FFA891,,0000,0000,0000,,Esta cosa esta totalmente loca
 Dialogue: 0,0:00:23.50,0:00:30.00,89BABE,,0000,0000,0000,,This is getting way out of hand!
 Dialogue: 0,0:00:23.50,0:00:30.00,EDF393,,0000,0000,0000,,Sie sind überhaupt nicht synchron aber wen interessiert das schon
-Dialogue: 0,0:00:30.00,0:00:30.40,EDF393,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
-Dialogue: 0,0:00:30.00,0:00:30.40,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.00,0:00:30.40,F5E665,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.00,0:00:30.40,FFC472,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
 Dialogue: 0,0:00:30.00,0:00:30.40,FFA891,,0000,0000,0000,,Esta cosa esta totalmente loca
 Dialogue: 0,0:00:30.00,0:00:30.40,89BABE,,0000,0000,0000,,This is getting way out of hand!
 Dialogue: 0,0:00:30.00,0:00:30.40,EDF393,,0000,0000,0000,,Sie sind überhaupt nicht synchron aber wen interessiert das schon
-Dialogue: 0,0:00:30.40,0:00:30.48,EDF393,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
-Dialogue: 0,0:00:30.40,0:00:30.48,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.40,0:00:30.48,F5E665,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.40,0:00:30.48,FFC472,,0000,0000,0000,,Sie sind jedoch nicht ganz synchron
 Dialogue: 0,0:00:30.40,0:00:30.48,89BABE,,0000,0000,0000,,This is getting way out of hand!
 Dialogue: 0,0:00:30.40,0:00:30.48,EDF393,,0000,0000,0000,,Sie sind überhaupt nicht synchron aber wen interessiert das schon
-Dialogue: 0,0:00:30.48,0:00:30.49,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.48,0:00:30.49,F5E665,,0000,0000,0000,,No son alineado sin embargo
 Dialogue: 0,0:00:30.48,0:00:30.49,89BABE,,0000,0000,0000,,This is getting way out of hand!
 Dialogue: 0,0:00:30.48,0:00:30.49,EDF393,,0000,0000,0000,,Sie sind überhaupt nicht synchron aber wen interessiert das schon
-Dialogue: 0,0:00:30.49,0:00:31.00,FFC472,,0000,0000,0000,,No son alineado sin embargo
+Dialogue: 0,0:00:30.49,0:00:31.00,F5E665,,0000,0000,0000,,No son alineado sin embargo
 Dialogue: 0,0:00:30.49,0:00:31.00,89BABE,,0000,0000,0000,,This is getting way out of hand!
 Dialogue: 0,0:00:31.00,0:00:32.10,89BABE,,0000,0000,0000,,This is getting way out of hand!

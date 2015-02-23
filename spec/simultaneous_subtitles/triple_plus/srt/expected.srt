@@ -4,24 +4,24 @@
 
 2
 00:00:02,000 --> 00:00:02,400
-<font color="#EDF393">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
-<font color="#F5E665">We are using six subtitles simultaneously</font>
-<font color="#FFC472">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#EDF393">We are using six subtitles simultaneously</font>
+<font color="#F5E665">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#FFC472">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
 <font color="#EDF393">Wir verwenden zu viele Untertitel zur gleichen Zeit</font>
 
 3
 00:00:02,400 --> 00:00:02,700
-<font color="#EDF393">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
-<font color="#F5E665">We are using six subtitles simultaneously</font>
-<font color="#FFC472">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#EDF393">We are using six subtitles simultaneously</font>
+<font color="#F5E665">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#FFC472">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
 <font color="#89BABE">We are using way too many here</font>
 <font color="#EDF393">Wir verwenden zu viele Untertitel zur gleichen Zeit</font>
 
 4
 00:00:02,700 --> 00:00:10,000
-<font color="#EDF393">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
-<font color="#F5E665">We are using six subtitles simultaneously</font>
-<font color="#FFC472">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#EDF393">We are using six subtitles simultaneously</font>
+<font color="#F5E665">Somos utilizando seis subtítulos simultáneamente</font>
+<font color="#FFC472">Wir verwenden sechs Untertitel zur gleichen Zeit</font>
 <font color="#FFA891">¿Qué está pasando?</font>
 <font color="#89BABE">We are using way too many here</font>
 <font color="#EDF393">Wir verwenden zu viele Untertitel zur gleichen Zeit</font>
@@ -47,34 +47,34 @@
 
 9
 00:00:11,975 --> 00:00:11,988
-<font color="#F5E665">That is correct</font>
+<font color="#EDF393">That is correct</font>
 <font color="#FFA891">¡Dios mio!</font>
 
 10
 00:00:11,988 --> 00:00:12,044
-<font color="#F5E665">That is correct</font>
-<font color="#FFC472">Esto es correcto</font>
+<font color="#EDF393">That is correct</font>
+<font color="#F5E665">Esto es correcto</font>
 <font color="#FFA891">¡Dios mio!</font>
 
 11
 00:00:12,044 --> 00:00:12,122
-<font color="#EDF393">Das stimmt</font>
-<font color="#F5E665">That is correct</font>
-<font color="#FFC472">Esto es correcto</font>
+<font color="#EDF393">That is correct</font>
+<font color="#F5E665">Esto es correcto</font>
+<font color="#FFC472">Das stimmt</font>
 <font color="#FFA891">¡Dios mio!</font>
 
 12
 00:00:12,122 --> 00:00:20,000
-<font color="#EDF393">Das stimmt</font>
-<font color="#F5E665">That is correct</font>
-<font color="#FFC472">Esto es correcto</font>
+<font color="#EDF393">That is correct</font>
+<font color="#F5E665">Esto es correcto</font>
+<font color="#FFC472">Das stimmt</font>
 <font color="#FFA891">¡Dios mio!</font>
 <font color="#89BABE">Man I feel sick</font>
 <font color="#EDF393">Die Dinge geraten aus dem Ruder</font>
 
 13
 00:00:20,000 --> 00:00:20,100
-<font color="#EDF393">Das stimmt</font>
+<font color="#FFC472">Das stimmt</font>
 <font color="#FFA891">¡Dios mio!</font>
 <font color="#89BABE">Man I feel sick</font>
 <font color="#EDF393">Die Dinge geraten aus dem Ruder</font>
@@ -96,55 +96,55 @@
 
 17
 00:00:22,000 --> 00:00:22,450
-<font color="#F5E665">They are not fully aligned, though</font>
+<font color="#EDF393">They are not fully aligned, though</font>
 
 18
 00:00:22,450 --> 00:00:22,900
-<font color="#EDF393">Sie sind jedoch nicht ganz synchron</font>
-<font color="#F5E665">They are not fully aligned, though</font>
+<font color="#EDF393">They are not fully aligned, though</font>
+<font color="#FFC472">Sie sind jedoch nicht ganz synchron</font>
 <font color="#FFA891">Esta cosa esta totalmente loca</font>
 
 19
 00:00:22,900 --> 00:00:23,500
-<font color="#EDF393">Sie sind jedoch nicht ganz synchron</font>
-<font color="#F5E665">They are not fully aligned, though</font>
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#EDF393">They are not fully aligned, though</font>
+<font color="#F5E665">No son alineado sin embargo</font>
+<font color="#FFC472">Sie sind jedoch nicht ganz synchron</font>
 <font color="#FFA891">Esta cosa esta totalmente loca</font>
 <font color="#EDF393">Sie sind überhaupt nicht synchron aber wen interessiert das schon</font>
 
 20
 00:00:23,500 --> 00:00:30,000
-<font color="#EDF393">Sie sind jedoch nicht ganz synchron</font>
-<font color="#F5E665">They are not fully aligned, though</font>
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#EDF393">They are not fully aligned, though</font>
+<font color="#F5E665">No son alineado sin embargo</font>
+<font color="#FFC472">Sie sind jedoch nicht ganz synchron</font>
 <font color="#FFA891">Esta cosa esta totalmente loca</font>
 <font color="#89BABE">This is getting way out of hand!</font>
 <font color="#EDF393">Sie sind überhaupt nicht synchron aber wen interessiert das schon</font>
 
 21
 00:00:30,000 --> 00:00:30,400
-<font color="#EDF393">Sie sind jedoch nicht ganz synchron</font>
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#F5E665">No son alineado sin embargo</font>
+<font color="#FFC472">Sie sind jedoch nicht ganz synchron</font>
 <font color="#FFA891">Esta cosa esta totalmente loca</font>
 <font color="#89BABE">This is getting way out of hand!</font>
 <font color="#EDF393">Sie sind überhaupt nicht synchron aber wen interessiert das schon</font>
 
 22
 00:00:30,400 --> 00:00:30,475
-<font color="#EDF393">Sie sind jedoch nicht ganz synchron</font>
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#F5E665">No son alineado sin embargo</font>
+<font color="#FFC472">Sie sind jedoch nicht ganz synchron</font>
 <font color="#89BABE">This is getting way out of hand!</font>
 <font color="#EDF393">Sie sind überhaupt nicht synchron aber wen interessiert das schon</font>
 
 23
 00:00:30,475 --> 00:00:30,488
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#F5E665">No son alineado sin embargo</font>
 <font color="#89BABE">This is getting way out of hand!</font>
 <font color="#EDF393">Sie sind überhaupt nicht synchron aber wen interessiert das schon</font>
 
 24
 00:00:30,488 --> 00:00:31,000
-<font color="#FFC472">No son alineado sin embargo</font>
+<font color="#F5E665">No son alineado sin embargo</font>
 <font color="#89BABE">This is getting way out of hand!</font>
 
 25

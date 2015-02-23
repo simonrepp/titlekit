@@ -24,11 +24,11 @@ describe Titlekit::Job do
         want.file(@out)
         want.fps(30)
 
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end      
     end
 
@@ -52,11 +52,11 @@ describe Titlekit::Job do
         want.file(@out)
         want.reference('first subtitle', seconds: 3.5)
 
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end       
     end
 
@@ -82,11 +82,11 @@ describe Titlekit::Job do
         have.fps(23.976)
         want.reference('first subtitle', seconds: 3.5)
 
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end       
     end
 
@@ -112,13 +112,12 @@ describe Titlekit::Job do
         want.reference('first subtitle', seconds: 2.4)
         want.reference('last subtitle', seconds: 32)
 
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end
     end
-
   end
 end

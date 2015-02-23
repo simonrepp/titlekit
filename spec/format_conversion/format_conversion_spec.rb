@@ -22,11 +22,11 @@ describe Titlekit::Job do
         want = job.want
         want.file(@out)
         
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end
     end
 
@@ -48,11 +48,11 @@ describe Titlekit::Job do
         want = job.want
         want.file(@out)
         
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end
     end
 
@@ -74,11 +74,11 @@ describe Titlekit::Job do
         want = job.want
         want.file(@out)
 
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end      
     end    
 
@@ -100,11 +100,11 @@ describe Titlekit::Job do
         want = job.want
         want.file(@out)
         
-        expect(job.run).to be_true
+        expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
-        expect(FileUtils.compare_file(@out, @expected)).to be_true
+        expect(FileUtils.compare_file(@out, @expected)).to be true
       end      
     end
 

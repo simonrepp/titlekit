@@ -86,5 +86,4 @@ module Titlekit
       return self
     end
   end
-  
 end

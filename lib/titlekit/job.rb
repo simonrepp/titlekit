@@ -56,7 +56,7 @@ module Titlekit
 
           want.subtitles += have.subtitles.clone
         end
-        
+
         polish(want)
         export(want)
       end

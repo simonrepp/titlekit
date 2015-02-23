@@ -120,7 +120,7 @@ describe Titlekit::Job do
         job.have { file('something/that/without/doubt/wont/exist.srt') }
         job.want { file('something/that/does/not/matter/anyway.ass') }
         
-        expect(job.run).to be_false
+        expect(job.run).to be false
         expect(job.report.join).to include('Failure while reading')
       end
     end
@@ -131,7 +131,7 @@ describe Titlekit::Job do
         job.have { file('spec/files/srt/simple.srt') }
         job.want { file('!@#$%^&*()|?/\\.ass') }
         
-        expect(job.run).to be_false
+        expect(job.run).to be false
         expect(job.report.join).to include('Failure while writing')
       end
     end
@@ -142,7 +142,7 @@ describe Titlekit::Job do
         job.have { file('spec/files/try/unsupported.try') }
         job.want { file('!@#$%^&*()|?/\.ass') }
         
-        expect(job.run).to be_false
+        expect(job.run).to be false
         expect(job.report.join).to include('Failure while importing TRY')
       end
     end 
@@ -153,7 +153,7 @@ describe Titlekit::Job do
         job.have { file('spec/files/srt/simple.srt') }
         job.want { file('spec/files/try/unsupported-output.try') }
         
-        expect(job.run).to be_false
+        expect(job.run).to be false
         expect(job.report.join).to include('Failure while exporting TRY')
       end
     end
