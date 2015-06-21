@@ -9,7 +9,7 @@ describe Titlekit::ASS do
         Titlekit::ASS.import(File.read('spec/files/ass/simple.ass'))
       end
 
-      it 'parses and builds 3 subtitles' do
+      it 'parses and builds 2 subtitles' do
         expect(subtitles.length).to eq(2)
       end
 
@@ -23,7 +23,7 @@ describe Titlekit::ASS do
       end
 
       it 'parses and builds correct lines' do
-        expect(subtitles[1][:lines]).to eq("Est-ce vraiment Naruto ?")
+        expect(subtitles[1][:lines]).to eq('Est-ce vraiment Naruto ?')
       end
     end
 
@@ -32,7 +32,7 @@ describe Titlekit::ASS do
         Titlekit::ASS.import(File.read('spec/files/ass/hard.ass'))
       end
 
-      it 'parses and builds 3 subtitles' do
+      it 'parses and builds 17 subtitles' do
         expect(subtitles.length).to eq(17)
       end
 
@@ -47,6 +47,29 @@ describe Titlekit::ASS do
 
       it 'parses and builds correct lines' do
         expect(subtitles[1][:lines]).to eq("هل تعمل اللغة العربية؟\n")
+      end
+    end
+
+    context 'with a file including a BOM' do
+      let(:subtitles) do
+        Titlekit::ASS.import(File.read('spec/files/ass/bom.ass'))
+      end
+
+      it 'parses and builds 2 subtitles' do
+        expect(subtitles.length).to eq(2)
+      end
+
+      it 'parses and builds correct ids' do
+        expect(subtitles[0][:id]).to eq(1)
+      end
+
+      it 'parses and builds correct timecodes' do
+        expect(subtitles[1][:start]).to eq(120.99)
+        expect(subtitles[1][:end]).to eq(122.87)
+      end
+
+      it 'parses and builds correct lines' do
+        expect(subtitles[1][:lines]).to eq('Agreed.')
       end
     end
   end
@@ -101,13 +124,13 @@ Dialogue: 0,0:00:01.50,0:00:03.70,Default,,0000,0000,0000,,Oh yeah ... 寧為太
 
   describe '.build_timecode' do
     it 'builds an ASS timecode from a float timecode value' do
-       expect(Titlekit::ASS.build_timecode(35.9678)).to eq('0:00:35.97')
+      expect(Titlekit::ASS.build_timecode(35.9678)).to eq('0:00:35.97')
     end
   end
 
   describe '.parse_timecode' do
     it 'obtains a float timecode value from an ASS timecode' do
-       expect(Titlekit::ASS.parse_timecode('0:00:35.96')).to eq(35.96)
+      expect(Titlekit::ASS.parse_timecode('0:00:35.96')).to eq(35.96)
     end
-  end   
+  end
 end
