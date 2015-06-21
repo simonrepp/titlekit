@@ -7,7 +7,7 @@ if ARGV.length > 0 && (ARGV[0] == 'template' || ARGV[0] == 'templates')
   filenames += Dir.glob('**/*.ssa')
   filenames += Dir.glob('**/*.ass')
   filenames += ['generic.srt'] if filenames.empty?
-  
+
   filenames.each do |filename|
 
     content = <<HERETEMPLATE

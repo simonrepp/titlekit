@@ -18,14 +18,14 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
-        
+
         job.run
 
         expect(job.report.join).to include('detected')
-      end     
+      end
     end
 
     context 'with exhibit B' do
@@ -43,12 +43,12 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
 
         job.run
-        
+
         expect(job.report.join).to include('detected')
       end
     end
@@ -68,12 +68,12 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
-        
+
         job.run
-        
+
         expect(job.report.join).to include('detected')
       end
     end

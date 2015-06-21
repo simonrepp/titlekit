@@ -18,7 +18,7 @@ module Titlekit
     # and any other unusual events that occur on the job. (regardless if it
     # failed or succeeded)
     #
-    # @return [Array<String>] All reported messages 
+    # @return [Array<String>] All reported messages
     attr_reader :report
 
     # Starts a new job.
@@ -39,7 +39,7 @@ module Titlekit
           require 'charlock_holmes'
         end
       rescue Gem::LoadError
-      end  
+      end
     end
 
     # Runs the job.
@@ -74,14 +74,14 @@ module Titlekit
     #     file('path/to/my/input.srt')
     #     fps(25)
     #   end
-    #   
+    #
     # @example Using a block and providing a variable
     #   job.have do |have|
     #     have.encoding('utf-8')
     #     have.file('path/to/my/input.srt')
     #     have.fps(25)
     #   end
-    #   
+    #
     # @example Catching the reference and assigning things at any later point
     #   have = job.have
     #   have.encoding('utf-8')
@@ -93,10 +93,10 @@ module Titlekit
     #   have2.encoding('ISO-8859-1')
     #   have2.file('path/to/my/input2.srt')
     #
-    # @param template [Have] optionally you can specify another {Have} as a 
+    # @param template [Have] optionally you can specify another {Have} as a
     #   template, from which all properties but the file path are cloned
     # @return [Have] a reference to the newly assigned {Have}
-    def have(*args, template: nil, &block)
+    def have(*_args, template: nil, &block)
       specification = Have.new
 
       if template
@@ -114,7 +114,7 @@ module Titlekit
 
       @haves << specification
 
-      return specification
+      specification
     end
 
     # Adds a new {Want} specification to your job.
@@ -125,14 +125,14 @@ module Titlekit
     #     file('path/to/my/output.srt')
     #     fps(23.976)
     #   end
-    #   
+    #
     # @example Using a block and providing a variable
     #   job.want do |want|
     #     want.encoding('utf-8')
     #     want.file('path/to/my/output.srt')
     #     want.fps((23.976)
     #   end
-    #   
+    #
     # @example Catching the reference and assigning things at any later point
     #   want = job.want
     #   want.encoding('utf-8')
@@ -144,7 +144,7 @@ module Titlekit
     #   want2.encoding('ISO-8859-1')
     #   want2.file('path/to/my/output.ass')
     #
-    # @param template [Want] optionally you can specify another {Want} as a 
+    # @param template [Want] optionally you can specify another {Want} as a
     #   template, from which all properties but the file path are cloned
     # @return [Want] a reference to the newly assigned {Want}
     def want(*args, template: nil, &block)
@@ -165,7 +165,7 @@ module Titlekit
 
       @wants << specification
 
-      return specification
+      specification
     end
 
     private
@@ -188,7 +188,7 @@ module Titlekit
           data.force_encoding(detection[:encoding])
         elsif [:detect, :rchardet19].include?(have.encoding) && defined?(CharDet)
           detection = CharDet.detect(data)
-          @report << "Assuming #{detection.encoding} for #{have.file} (detected by rchardet19 with #{(detection.confidence*100).to_i}% confidence)"
+          @report << "Assuming #{detection.encoding} for #{have.file} (detected by rchardet19 with #{(detection.confidence * 100).to_i}% confidence)"
           data.force_encoding(detection.encoding)
         else
           @report << "Assuming #{have.encoding} for #{have.file} (user-supplied)"
@@ -207,18 +207,19 @@ module Titlekit
       end
 
       begin
-        have.subtitles = case File.extname(have.file)
-        when '.ass'
-          ASS.import(data)
-        when '.ssa'
-          SSA.import(data)
-        when '.srt'
-          SRT.import(data)
-        when '.yt'
-          YT.import(data)        
-        else
-          raise 'Not supported'
-        end
+        have.subtitles =
+          case File.extname(have.file)
+          when '.ass'
+            ASS.import(data)
+          when '.ssa'
+            SSA.import(data)
+          when '.srt'
+            SRT.import(data)
+          when '.yt'
+            YT.import(data)
+          else
+            fail 'Not supported'
+          end
       rescue
         @report << "Failure while importing #{File.extname(have.file)[1..3].upcase} from #{have.file}"
         raise AbortJob
@@ -240,13 +241,13 @@ module Titlekit
       end
 
       case matching_references.length
-      when 3..(infinity = 1.0/0)
+      when 3..(_infinity = 1.0 / 0)
         # "synchronization jitter" correction by interpolating ? Consider !
       when  2
         retime_by_double_reference(have,
-                                     want,
-                                     matching_references[0],
-                                     matching_references[1])
+                                   want,
+                                   matching_references[0],
+                                   matching_references[1])
       when 1
         if have.fps && want.fps
           retime_by_framerate_plus_reference(have, want, matching_references[0])
@@ -254,15 +255,13 @@ module Titlekit
           retime_by_single_reference(have, want, matching_references[0])
         end
       when 0
-        if have.fps && want.fps
-          retime_by_framerate(have, want)
-        end
+        retime_by_framerate(have, want) if have.fps && want.fps
       end
     end
 
     # Cleans out subtitles that fell out of the usable time range
     #
-    # @params have [Have] What we {Have}   
+    # @params have [Have] What we {Have}
     def cull(have)
       have.subtitles.reject! { |subtitle| subtitle[:end] < 0 }
       have.subtitles.each do |subtitle|
@@ -273,7 +272,7 @@ module Titlekit
     # Assigns track identification fields for distinguishing
     # between continuous/simultaneous subtitles
     #
-    # @params have [Have] What we {Have} 
+    # @params have [Have] What we {Have}
     def group(have)
       if have.track
         # Assign a custom track identifier if one was supplied
@@ -332,9 +331,9 @@ module Titlekit
       # Glue subtitles ends
       want.subtitles.sort_by! { |subtitle| subtitle[:end] }
       want.subtitles.each_cons(2) do |pair|
-        if pair[1][:end]-pair[0][:end] < want.glue_treshold
-          pair[0][:end] += (pair[1][:end]-pair[0][:end]) / 2
-          pair[1][:end] -= (pair[1][:end]-pair[0][:end]) / 2
+        if pair[1][:end] - pair[0][:end] < want.glue_treshold
+          pair[0][:end] += (pair[1][:end] - pair[0][:end]) / 2
+          pair[1][:end] -= (pair[1][:end] - pair[0][:end]) / 2
         end
       end
     end
@@ -344,22 +343,23 @@ module Titlekit
     # @param want [Want] What we {Want}
     def export(want)
       begin
-        data = case File.extname(want.file)
-        when '.ass'
-          ASS.master(want.subtitles)
-          ASS.export(want.subtitles)
-        when '.ssa'
-          SSA.master(want.subtitles)
-          SSA.export(want.subtitles)
-        when '.srt'
-          SRT.master(want.subtitles)
-          SRT.export(want.subtitles)
-        when '.yt'
-          YT.master(want.subtitles)
-          YT.export(want.subtitles)         
-        else
-          raise 'Not supported'
-        end
+        data =
+          case File.extname(want.file)
+          when '.ass'
+            ASS.master(want.subtitles)
+            ASS.export(want.subtitles)
+          when '.ssa'
+            SSA.master(want.subtitles)
+            SSA.export(want.subtitles)
+          when '.srt'
+            SRT.master(want.subtitles)
+            SRT.export(want.subtitles)
+          when '.yt'
+            YT.master(want.subtitles)
+            YT.export(want.subtitles)
+          else
+            fail 'Not supported'
+          end
       rescue
         @report << "Failure while exporting #{File.extname(want.file)[1..3].upcase} for #{want.file}"
         raise AbortJob
@@ -389,7 +389,7 @@ module Titlekit
     #
     # @param have [Have] the subtitles we {Have}
     # @param want [Want] the subtitles we {Want}
-    # @param reference [Symbol, String] the key of the reference 
+    # @param reference [Symbol, String] the key of the reference
     def retime_by_single_reference(have, want, reference)
       amount = want.references[reference][:timecode] -
                have.references[reference][:timecode]
@@ -420,7 +420,7 @@ module Titlekit
       have.subtitles.each do |subtitle|
         subtitle[:start] += amount
         subtitle[:end] += amount
-      end      
+      end
     end
 
     # Applies a progressive timeshift on the subtitles we {Have}
@@ -435,11 +435,15 @@ module Titlekit
     # @param [Array<Float>] targets the two amounts of time by which to shift
     #   either of the two points that shall be shifted
     def retime_by_double_reference(have, want, reference_a, reference_b)
-      origins = [ have.references[reference_a][:timecode],
-                  have.references[reference_b][:timecode] ]
+      origins = [
+        have.references[reference_a][:timecode],
+        have.references[reference_b][:timecode]
+      ]
 
-      targets = [ want.references[reference_a][:timecode],
-                  want.references[reference_b][:timecode] ]
+      targets = [
+        want.references[reference_a][:timecode],
+        want.references[reference_b][:timecode]
+      ]
 
       rescale_factor = (targets[1] - targets[0]) / (origins[1] - origins[0])
       rebase_shift = targets[0] - origins[0] * rescale_factor

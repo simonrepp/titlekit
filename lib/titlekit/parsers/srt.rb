@@ -6,7 +6,7 @@ module Titlekit
     # Internal intermediate class used for parsing with treetop
     class Subtitles < Treetop::Runtime::SyntaxNode
       def build
-        elements.map { |subtitle| subtitle.build }
+        elements.map(&:build)
       end
     end
 
@@ -51,8 +51,8 @@ module Titlekit
         failure += "failure_column #{parser.failure_column}\n"
         failure += "failure_reason #{parser.failure_reason}\n"
 
-        raise failure
-      end 
+        fail failure
+      end
     end
 
     # Master the subtitles for best possible usage of the format's features.
@@ -62,8 +62,8 @@ module Titlekit
       tracks = subtitles.map { |subtitle| subtitle[:track] }.uniq
 
       if tracks.length == 1
-  
-        # maybe styling? aside that: nada más!
+
+        # maybe styling? aside that: nothing more!
 
       elsif tracks.length >= 2
 
@@ -86,7 +86,7 @@ module Titlekit
             intersecting.sort_by! { |subtitle| tracks.index(subtitle[:track]) }
 
             subtitle = {}
-            subtitle[:id] = mastered_subtitles.length+1
+            subtitle[:id] = mastered_subtitles.length + 1
             subtitle[:start] = frame[:start]
             subtitle[:end] = frame[:end]
 
@@ -116,7 +116,7 @@ module Titlekit
       result = ''
 
       subtitles.each_with_index do |subtitle, index|
-        result << (index+1).to_s
+        result << (index + 1).to_s
         result << "\n"
         result << SRT.build_timecode(subtitle[:start])
         result << ' --> '
@@ -126,7 +126,7 @@ module Titlekit
         result << "\n\n"
       end
 
-      return result
+      result
     end
 
     protected
@@ -136,11 +136,11 @@ module Titlekit
     # @param seconds [Float] an amount of seconds
     # @return [String] An SRT-formatted timecode ('hh:mm:ss,ms')
     def self.build_timecode(seconds)
-      sprintf("%02d:%02d:%02d,%s",
-              seconds / 3600,
-              (seconds%3600) / 60,
-              seconds % 60,
-              sprintf("%.3f", seconds)[-3, 3])
+      format('%02d:%02d:%02d,%s',
+             seconds / 3600,
+             (seconds % 3600) / 60,
+             seconds % 60,
+             format('%.3f', seconds)[-3, 3])
     end
 
     # Parses an SRT-formatted timecode into a float representing seconds
@@ -149,7 +149,7 @@ module Titlekit
     # @param [Float] an amount of seconds
     def self.parse_timecode(timecode)
       mres = timecode.match(/(?<h>\d+):(?<m>\d+):(?<s>\d+),(?<ms>\d+)/)
-      "#{mres["h"].to_i * 3600 + mres["m"].to_i * 60 + mres["s"].to_i}.#{mres["ms"]}".to_f
+      "#{mres['h'].to_i * 3600 + mres['m'].to_i * 60 + mres['s'].to_i}.#{mres['ms']}".to_f
     end
   end
 end

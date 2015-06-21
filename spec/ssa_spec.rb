@@ -9,7 +9,7 @@ describe Titlekit::SSA do
         Titlekit::SSA.import(File.read('spec/files/ssa/simple.ssa'))
       end
 
-      it 'parses and builds 3 subtitles' do
+      it 'parses and builds 2 subtitles' do
         expect(subtitles.length).to eq(2)
       end
 
@@ -23,7 +23,7 @@ describe Titlekit::SSA do
       end
 
       it 'parses and builds correct lines' do
-        expect(subtitles[1][:lines]).to eq("{\\a2}Story Script & Direction - MIYAZAKI Hayao")
+        expect(subtitles[1][:lines]).to eq('{\\a2}Story Script & Direction - MIYAZAKI Hayao')
       end
     end
   end
@@ -78,13 +78,13 @@ Dialogue: 0,0:00:01.50,0:00:03.70,Default,,0000,0000,0000,,Oh yeah ... 寧為太
 
   describe '.build_timecode' do
     it 'builds an SSA timecode from a float timecode value' do
-       expect(Titlekit::SSA.build_timecode(35.9678)).to eq('0:00:35.97')
+      expect(Titlekit::SSA.build_timecode(35.9678)).to eq('0:00:35.97')
     end
   end
 
   describe '.parse_timecode' do
     it 'obtains a float timecode value from an SSA timecode' do
-       expect(Titlekit::SSA.parse_timecode('0:00:35.96')).to eq(35.96)
+      expect(Titlekit::SSA.parse_timecode('0:00:35.96')).to eq(35.96)
     end
-  end    
+  end
 end

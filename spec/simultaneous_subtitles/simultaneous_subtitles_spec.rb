@@ -3,10 +3,10 @@ require File.join(File.expand_path(__dir__), '../spec_helper')
 describe Titlekit::Job do
 
   describe 'Simultaneous Subtitles' do
-    
+
     context 'with dual subtitles' do
       let(:ins) do
-        %w{one two}.map do |file|
+        %w(one two).map do |file|
           File.join(__dir__, 'dual', "#{file}.srt")
         end
       end
@@ -23,7 +23,7 @@ describe Titlekit::Job do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
@@ -65,19 +65,19 @@ describe Titlekit::Job do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
         it 'delivers the expected output' do
           expect(FileUtils.compare_file(@out, @expected)).to be true
         end
-      end            
+      end
     end
 
     context 'with triple subtitles' do
       let(:ins) do
-        %w{one two three}.map do |file|
+        %w(one two three).map do |file|
           File.join(__dir__, 'triple', "#{file}.srt")
         end
       end
@@ -94,7 +94,7 @@ describe Titlekit::Job do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
@@ -115,7 +115,7 @@ describe Titlekit::Job do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
@@ -136,19 +136,19 @@ describe Titlekit::Job do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
         it 'delivers the expected output' do
           expect(FileUtils.compare_file(@out, @expected)).to be true
         end
-      end            
+      end
     end
 
     context 'with three+ simultaneous subtitles' do
       let(:ins) do
-        %w{one two three four five six}.map do |file|
+        %w(one two three four five six).map do |file|
           File.join(__dir__, 'triple_plus', "#{file}.srt")
         end
       end
@@ -159,13 +159,13 @@ describe Titlekit::Job do
           @expected = File.join(__dir__, 'triple_plus', 'srt', 'expected.srt')
 
           File.delete(@out) if File.exist?(@out)
-        end      
+        end
 
         it 'runs the job' do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
@@ -180,13 +180,13 @@ describe Titlekit::Job do
           @expected = File.join(__dir__, 'triple_plus', 'ssa', 'expected.ssa')
 
           File.delete(@out) if File.exist?(@out)
-        end      
+        end
 
         it 'runs the job' do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
@@ -201,20 +201,20 @@ describe Titlekit::Job do
           @expected = File.join(__dir__, 'triple_plus', 'ass', 'expected.ass')
 
           File.delete(@out) if File.exist?(@out)
-        end      
+        end
 
         it 'runs the job' do
           job = Titlekit::Job.new
           ins.each { |file| job.have.file(file).encoding('UTF-8') }
           job.want.file(@out)
-          
+
           expect(job.run).to be true
         end
 
         it 'delivers the expected output' do
           expect(FileUtils.compare_file(@out, @expected)).to be true
         end
-      end            
+      end
     end
   end
 end

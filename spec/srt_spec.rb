@@ -48,7 +48,7 @@ describe Titlekit::SRT do
       it 'parses and builds correct lines' do
         expect(subtitles[0][:lines]).to eq("<i>(male narrator) Previously\r\non Battlestar Galactica.</i>")
       end
-    end 
+    end
 
     context 'with a file that contains coordinates' do
       let(:subtitles) do
@@ -75,7 +75,7 @@ describe Titlekit::SRT do
       it 'ignores the display coordinates' do
         # just fyi
       end
-    end     
+    end
   end
 
   describe '.export' do
@@ -122,13 +122,13 @@ Oh yeah ... 寧為太平犬，不做亂世人
 
   describe '.build_timecode' do
     it 'builds an SRT timecode from a float timecode value' do
-       expect(Titlekit::SRT.build_timecode(35.9678)).to eq('00:00:35,968')
+      expect(Titlekit::SRT.build_timecode(35.9678)).to eq('00:00:35,968')
     end
   end
 
   describe '.parse_timecode' do
     it 'obtains a float timecode value from an SRT timecode' do
-       expect(Titlekit::SRT.parse_timecode('00:00:35,968')).to eq(35.968)
+      expect(Titlekit::SRT.parse_timecode('00:00:35,968')).to eq(35.968)
     end
-  end    
+  end
 end

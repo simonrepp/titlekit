@@ -29,7 +29,7 @@ describe Titlekit::Job do
 
       it 'delivers the expected output' do
         expect(FileUtils.compare_file(@out, @expected)).to be true
-      end      
+      end
     end
 
     context 'Based on a single reference' do
@@ -57,7 +57,7 @@ describe Titlekit::Job do
 
       it 'delivers the expected output' do
         expect(FileUtils.compare_file(@out, @expected)).to be true
-      end       
+      end
     end
 
     context 'Based on differing framerates plus a reference' do
@@ -87,7 +87,7 @@ describe Titlekit::Job do
 
       it 'delivers the expected output' do
         expect(FileUtils.compare_file(@out, @expected)).to be true
-      end       
+      end
     end
 
     context 'Based on two references' do

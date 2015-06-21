@@ -3,7 +3,7 @@ require File.join(File.expand_path(__dir__), '../spec_helper')
 describe Titlekit::Job do
 
   describe 'Format conversion' do
-    
+
     context 'From ASS to SRT' do
       before(:all) do
         @in = File.join(__dir__, 'ass_srt', 'in.ass')
@@ -18,10 +18,10 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
@@ -44,10 +44,10 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
@@ -70,7 +70,7 @@ describe Titlekit::Job do
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
 
@@ -79,10 +79,10 @@ describe Titlekit::Job do
 
       it 'delivers the expected output' do
         expect(FileUtils.compare_file(@out, @expected)).to be true
-      end      
-    end    
+      end
+    end
 
-   context 'From SSA to SRT' do
+    context 'From SSA to SRT' do
       before(:all) do
         @in = File.join(__dir__, 'ssa_srt', 'in.ssa')
         @out = File.join(__dir__, 'ssa_srt', 'out.srt')
@@ -91,22 +91,21 @@ describe Titlekit::Job do
         File.delete(@out) if File.exist?(@out)
       end
 
-      it 'runs the job' do 
+      it 'runs the job' do
         job = Titlekit::Job.new
 
         have = job.have
         have.file(@in)
-        
+
         want = job.want
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
       it 'delivers the expected output' do
         expect(FileUtils.compare_file(@out, @expected)).to be true
-      end      
+      end
     end
-
   end
 end

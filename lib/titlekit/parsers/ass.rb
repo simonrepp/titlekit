@@ -31,7 +31,7 @@ module Titlekit
           subtitle = {}
 
           fields = line.text_value.split(',')
-          
+
           subtitle[:id] = elements.index(line) + 1
           subtitle[:start] = SSA.parse_timecode(fields[1])
           subtitle[:end] = SSA.parse_timecode(fields[2])
@@ -59,8 +59,8 @@ module Titlekit
         failure += "failure_column #{parser.failure_column}\n"
         failure += "failure_reason #{parser.failure_reason}\n"
 
-        raise failure
-      end 
+        fail failure
+      end
     end
 
     # Master the subtitles for best possible usage of the format's features.
@@ -70,8 +70,8 @@ module Titlekit
       tracks = subtitles.map { |subtitle| subtitle[:track] }.uniq
 
       if tracks.length == 1
-  
-        # maybe styling? aside that: nada más!
+
+        # maybe styling? aside that: nothing more!
 
       elsif tracks.length == 2 || tracks.length == 3
 
@@ -107,7 +107,7 @@ module Titlekit
             intersecting.sort_by! { |subtitle| tracks.index(subtitle[:track]) }
             intersecting.each do |subtitle|
               new_subtitle = {}
-              new_subtitle[:id] = mastered_subtitles.length+1
+              new_subtitle[:id] = mastered_subtitles.length + 1
               new_subtitle[:start] = frame[:start]
               new_subtitle[:end] = frame[:end]
 
@@ -143,9 +143,9 @@ module Titlekit
       end
 
       result << "\n" # Close styles section
-      
+
       result << "[Events]\nFormat: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text\n"
-      
+
       subtitles.each do |subtitle|
         fields = [
           'Dialogue: 0',  # Format: Marked
@@ -156,14 +156,14 @@ module Titlekit
           '0000',  # MarginL
           '0000',  # MarginR
           '0000',  # MarginV
-          '',# Effect
+          '', # Effect
           subtitle[:lines].gsub("\n", '\N')  # Text
         ]
 
         result << fields.join(',') + "\n"
       end
 
-      return result
+      result
     end
 
     protected
@@ -173,11 +173,11 @@ module Titlekit
     # @param seconds [Float] an amount of seconds
     # @return [String] An ASS-formatted timecode ('h:mm:ss.ms')
     def self.build_timecode(seconds)
-      sprintf("%01d:%02d:%02d.%s",
-              seconds / 3600,
-              (seconds%3600) / 60,
-              seconds % 60,
-              sprintf("%.2f", seconds)[-2, 3])
+      format('%01d:%02d:%02d.%s',
+             seconds / 3600,
+             (seconds % 3600) / 60,
+             seconds % 60,
+             format('%.2f', seconds)[-2, 3])
     end
 
     # Parses an ASS-formatted timecode into a float representing seconds
@@ -186,7 +186,7 @@ module Titlekit
     # @param [Float] an amount of seconds
     def self.parse_timecode(timecode)
       mres = timecode.match(/(?<h>\d):(?<m>\d{2}):(?<s>\d{2})[:|\.](?<ms>\d+)/)
-      return "#{mres["h"].to_i * 3600 + mres["m"].to_i * 60 + mres["s"].to_i}.#{mres["ms"]}".to_f
-    end     
+      "#{mres['h'].to_i * 3600 + mres['m'].to_i * 60 + mres['s'].to_i}.#{mres['ms']}".to_f
+    end
   end
 end

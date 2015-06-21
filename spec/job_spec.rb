@@ -16,7 +16,7 @@ describe Titlekit::Job do
 
       it 'returns an instance of Have' do
         expect(have).to be_a_kind_of(Titlekit::Have)
-      end    
+      end
     end
 
     context 'with a block, passing no variable' do
@@ -36,7 +36,7 @@ describe Titlekit::Job do
         expect(have.encoding).to eq('utf-8')
         expect(have.file).to be
         expect(have.fps).to eq(25)
-      end      
+      end
     end
 
     context 'with a block, passing a variable' do
@@ -108,7 +108,7 @@ describe Titlekit::Job do
         expect(want.encoding).to eq('utf-8')
         expect(want.file).to eq('out.srt')
         expect(want.fps).to eq(23.976)
-      end      
+      end
     end
   end
 
@@ -119,7 +119,7 @@ describe Titlekit::Job do
         job = Titlekit::Job.new
         job.have { file('something/that/without/doubt/wont/exist.srt') }
         job.want { file('something/that/does/not/matter/anyway.ass') }
-        
+
         expect(job.run).to be false
         expect(job.report.join).to include('Failure while reading')
       end
@@ -130,7 +130,7 @@ describe Titlekit::Job do
         job = Titlekit::Job.new
         job.have { file('spec/files/srt/simple.srt') }
         job.want { file('!@#$%^&*()|?/\\.ass') }
-        
+
         expect(job.run).to be false
         expect(job.report.join).to include('Failure while writing')
       end
@@ -141,22 +141,21 @@ describe Titlekit::Job do
         job = Titlekit::Job.new
         job.have { file('spec/files/try/unsupported.try') }
         job.want { file('!@#$%^&*()|?/\.ass') }
-        
+
         expect(job.run).to be false
         expect(job.report.join).to include('Failure while importing TRY')
       end
-    end 
+    end
 
     context 'with an output format that is not supported' do
       it 'gracefully aborts the job' do
         job = Titlekit::Job.new
         job.have { file('spec/files/srt/simple.srt') }
         job.want { file('spec/files/try/unsupported-output.try') }
-        
+
         expect(job.run).to be false
         expect(job.report.join).to include('Failure while exporting TRY')
       end
     end
-
   end
 end

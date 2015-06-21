@@ -12,7 +12,7 @@ module Titlekit
       @subtitles = []
       @track = nil
 
-      return self
+      self
     end
 
     # Specifies the encoding you have or want.
@@ -31,7 +31,7 @@ module Titlekit
     # Specifies the file (path) you have or want.
     #
     # @param [String] A string specifying the path to the file
-    # @return If you omit the argument, it returns the already specified path 
+    # @return If you omit the argument, it returns the already specified path
     def file(*args)
       if args.empty?
         return @file
@@ -44,7 +44,7 @@ module Titlekit
     # Specifies the track the subtitles should be assigned to.
     #
     # @param [String] A string specifying the track identifier
-    # @return If you omit the argument, it returns the already specified track 
+    # @return If you omit the argument, it returns the already specified track
     def track(*args)
       if args.empty?
         return @track
@@ -52,7 +52,7 @@ module Titlekit
         @track = args[0]
         return self
       end
-    end      
+    end
 
     # Specifies the framerate you have or want.
     #
@@ -69,7 +69,7 @@ module Titlekit
 
     # Returns all named references you have specified
     def references
-      return @references
+      @references
     end
 
     # Places a named reference (in the form of a string or a symbol)
@@ -85,7 +85,7 @@ module Titlekit
     #
     # @example Referencing a timecode by hours
     #   have.reference('Earl grey, hot', hours: 0.963)
-    #  
+    #
     # @example Referencing a timecode by seconds
     #   have.reference('In a galaxy ...', seconds: 14.2)
     #
@@ -97,7 +97,7 @@ module Titlekit
     #
     # @example Referencing a timecode by an SSA-style timecode
     #   have.reference('In a galaxy ...', ssa_timecode: '0:00:14,20')
-    #    
+    #
     # @example Symbols can be used as references as well!
     #   have.reference(:narrator_begins, minutes: 9.6)
     #
@@ -107,7 +107,7 @@ module Titlekit
     # @param seconds [Float]
     # @param milliseconds [Float]
     def reference(name,
-                  *args,
+                  *_args,
                   hours: nil,
                   minutes: nil,
                   seconds: nil,
@@ -116,24 +116,25 @@ module Titlekit
                   ssa_timecode: nil,
                   ass_timecode: nil)
 
-      @references[name] = case
-      when hours
-        { timecode: hours * 3600 }
-      when minutes
-        { timecode: minutes * 60 }
-      when seconds
-        { timecode: seconds }
-      when milliseconds
-        { timecode: milliseconds / 1000 }
-      when srt_timecode
-        { timecode: Titlekit::SRT.parse_timecode(srt_timecode) }
-      when ssa_timecode
-        { timecode: Titlekit::SSA.parse_timecode(ssa_timecode) }
-      when ass_timecode
-        { timecode: Titlekit::ASS.parse_timecode(ass_timecode) }
-      end
+      @references[name] =
+        case
+        when hours
+          { timecode: hours * 3600 }
+        when minutes
+          { timecode: minutes * 60 }
+        when seconds
+          { timecode: seconds }
+        when milliseconds
+          { timecode: milliseconds / 1000 }
+        when srt_timecode
+          { timecode: Titlekit::SRT.parse_timecode(srt_timecode) }
+        when ssa_timecode
+          { timecode: Titlekit::SSA.parse_timecode(ssa_timecode) }
+        when ass_timecode
+          { timecode: Titlekit::ASS.parse_timecode(ass_timecode) }
+        end
 
-      return self
-    end   
+      self
+    end
   end
 end

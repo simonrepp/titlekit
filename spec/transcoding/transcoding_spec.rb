@@ -19,11 +19,11 @@ describe Titlekit::Job do
         have = job.have
         have.encoding('ISO-8859-1')
         have.file(@in)
-        
+
         want = job.want
         want.encoding('UTF-8')
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
@@ -47,11 +47,11 @@ describe Titlekit::Job do
         have = job.have
         have.encoding('Windows-1252')
         have.file(@in)
-        
+
         want = job.want
         want.encoding('UTF-8')
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
@@ -75,11 +75,11 @@ describe Titlekit::Job do
         have = job.have
         have.encoding('UTF-8')
         have.file(@in)
-        
+
         want = job.want
         want.encoding('GBK')
         want.file(@out)
-        
+
         expect(job.run).to be true
       end
 
@@ -103,14 +103,14 @@ describe Titlekit::Job do
         have = job.have
         have.encoding('GB2312')
         have.file(@in)
-        
+
         want = job.want
         want.encoding('ASCII')
         want.file(@out)
-        
+
         expect(job.run).to be false
         expect(job.report.join).to include('Failure while transcoding')
       end
-    end        
+    end
   end
 end

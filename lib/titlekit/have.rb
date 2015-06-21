@@ -14,7 +14,7 @@ module Titlekit
     #   :rchardet19 or :charlock_holmes if you have installed an additional
     #   detection library and want to specifically use one or the other.
     #
-    # @return If you omit the argument, it returns the already specified encoding
+    # @return If you omit the argument it returns the already specified encoding
     def encoding(*args)
       if args.empty?
         return @encoding
@@ -37,7 +37,7 @@ module Titlekit
     #
     # @example Referencing a subtitle index (ZERO-INDEXED! First subtitle is 0)
     #   have.reference('Earl grey, hot', subtitle: 645)
-    #  
+    #
     # @example Referencing a timecode by seconds
     #   have.reference('In a galaxy ...', seconds: 14.2)
     #
@@ -60,7 +60,7 @@ module Titlekit
     # @param seconds [Float]
     # @param milliseconds [Float]
     def reference(name,
-                  *args,
+                  *_args,
                   subtitle: nil,
                   hours: nil,
                   minutes: nil,
@@ -83,7 +83,7 @@ module Titlekit
               ass_timecode: ass_timecode)
       end
 
-      return self
+      self
     end
   end
 end

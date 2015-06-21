@@ -63,7 +63,7 @@ shared_examples 'a specification' do
       it 'returns the set named reference for a timecode' do
         expect(specification.references[:some_point][:timecode]).to eq(210)
       end
-    end    
+    end
 
     context 'specifying an SRT timecode' do
       let(:specification) do
@@ -105,7 +105,7 @@ shared_examples 'a specification' do
       it 'returns the set named reference for a timecode' do
         expect(specification.references[:some_point][:timecode]).to eq(210)
       end
-    end       
+    end
   end
 end
 
