@@ -99,21 +99,23 @@ module Titlekit
 
         frames.each do |frame|
           intersecting = subtitles.select do |subtitle|
-            (subtitle[:end] == frame[:end] || subtitle[:start] == frame[:start] ||
-            (subtitle[:start] < frame[:start] && subtitle[:end] > frame[:end]))
+            subtitle[:end] == frame[:end] ||
+            subtitle[:start] == frame[:start] ||
+            (subtitle[:start] < frame[:start] && subtitle[:end] > frame[:end])
           end
 
           if intersecting.any?
             intersecting.sort_by! { |subtitle| tracks.index(subtitle[:track]) }
             intersecting.each do |subtitle|
-              new_subtitle = {}
-              new_subtitle[:id] = mastered_subtitles.length + 1
-              new_subtitle[:start] = frame[:start]
-              new_subtitle[:end] = frame[:end]
+              color = tracks.index(subtitle[:track]) % DEFAULT_PALETTE.length
 
-              color = DEFAULT_PALETTE[tracks.index(subtitle[:track]) % DEFAULT_PALETTE.length]
-              new_subtitle[:style] = color
-              new_subtitle[:lines]  = subtitle[:lines]
+              new_subtitle = {
+                id: mastered_subtitles.length + 1,
+                start: frame[:start],
+                end: frame[:end],
+                style: DEFAULT_PALETTE[color],
+                lines: subtitle[:lines]
+              }
 
               mastered_subtitles << new_subtitle
             end
@@ -185,8 +187,8 @@ module Titlekit
     # @param timecode [String] An ASS-formatted timecode ('h:mm:ss.ms')
     # @param [Float] an amount of seconds
     def self.parse_timecode(timecode)
-      mres = timecode.match(/(?<h>\d):(?<m>\d{2}):(?<s>\d{2})[:|\.](?<ms>\d+)/)
-      "#{mres['h'].to_i * 3600 + mres['m'].to_i * 60 + mres['s'].to_i}.#{mres['ms']}".to_f
+      m = timecode.match(/(?<h>\d):(?<m>\d{2}):(?<s>\d{2})[:|\.](?<ms>\d+)/)
+      m['h'].to_i * 3600 + m['m'].to_i * 60 + m['s'].to_i + "0.#{m['ms']}".to_f
     end
   end
 end
