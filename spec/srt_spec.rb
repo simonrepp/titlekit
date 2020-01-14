@@ -41,6 +41,7 @@ describe Titlekit::SRT do
       end
 
       it 'parses and builds correct timecodes' do
+        expect(subtitles[7][:end]).to eq(22.952)
         expect(subtitles[299][:start]).to eq(1426.564)
         expect(subtitles[299][:end]).to eq(1428.759)
       end
