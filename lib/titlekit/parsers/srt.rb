@@ -29,8 +29,7 @@ module Titlekit
         value += hours.text_value.to_i * 3600
         value += minutes.text_value.to_i * 60
         value += seconds.text_value.to_i
-        value += "0.#{fractions.text_value}".to_f
-        value
+        "#{value}.#{fractions.text_value}".to_f
       end
     end
 

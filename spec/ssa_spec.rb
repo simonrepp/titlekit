@@ -85,6 +85,7 @@ Dialogue: 0,0:00:01.50,0:00:03.70,Default,,0000,0000,0000,,Oh yeah ... 寧為太
   describe '.parse_timecode' do
     it 'obtains a float timecode value from an SSA timecode' do
       expect(Titlekit::SSA.parse_timecode('0:00:35.96')).to eq(35.96)
+      expect(Titlekit::SSA.parse_timecode('0:00:04.56')).to eq(4.56)
     end
   end
 end

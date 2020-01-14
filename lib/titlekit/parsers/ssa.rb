@@ -192,7 +192,7 @@ module Titlekit
     # @param [Float] an amount of seconds
     def self.parse_timecode(timecode)
       m = timecode.match(/(?<h>\d):(?<m>\d{2}):(?<s>\d{2})[:|\.](?<ms>\d+)/)
-      m['h'].to_i * 3600 + m['m'].to_i * 60 + m['s'].to_i + "0.#{m['ms']}".to_f
+      "#{m['h'].to_i * 3600 + m['m'].to_i * 60 + m['s'].to_i}.#{m['ms']}".to_f
     end
   end
 end
