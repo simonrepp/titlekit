@@ -12,11 +12,11 @@ Gem::Specification.new do |spec|
 
   spec.license = 'MIT'
 
-  spec.add_runtime_dependency('rchardet19')
-  spec.add_runtime_dependency('treetop')
+  spec.add_runtime_dependency('rchardet19', '~> 1.3.7')
+  spec.add_runtime_dependency('treetop', '~> 1.6.10')
 
-  spec.add_development_dependency('rake')
-  spec.add_development_dependency('rspec')
+  spec.add_development_dependency('rake', '~> 13.0.1')
+  spec.add_development_dependency('rspec', '~> 3.9.0')
 
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.4.0'
